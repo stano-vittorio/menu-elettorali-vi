@@ -5,10 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Menu Elettorale Vicenza</title>
 
-    <!-- Colore barra del browser / status bar -->
+    <!-- Colore barre del browser (Android + iOS) -->
     <meta name="theme-color" content="#0f172a" />
+
+    <!-- Impostazioni iOS per aggiunta a schermata Home -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <!-- Icona per "Aggiungi a schermata Home" su iOS -->
+    <!-- Metti un file icon-180.png (180x180) nella stessa cartella di index.html -->
+    <link rel="apple-touch-icon" sizes="180x180" href="icon-180.png" />
+
+    <!-- Icona favicon standard (opzionale, stesso file o uno più piccolo) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="icon-180.png" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
@@ -16,14 +25,14 @@
         html {
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #0f172a, #1e293b);
+            background-color: #0f172a; /* colore solido per le barre di sistema */
         }
 
         body {
             margin: 0;
             padding: 0;
             font-family: "Segoe UI", Roboto, Arial, sans-serif;
-            /* usiamo min-height per evitare problemi con la barra di Safari */
+            /* min-height per gestire meglio le barre di Safari su iOS */
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -31,13 +40,14 @@
             justify-content: flex-start;
             padding-top: 50px;
             color: white;
-            background: transparent; /* lo sfondo è sull'html */
+            background: linear-gradient(135deg, #0f172a, #1e293b);
             box-sizing: border-box;
         }
 
         header {
             text-align: center;
             margin-bottom: 140px;
+            padding: 0 16px;
         }
 
         .icon-top {
@@ -92,7 +102,6 @@
         @media (max-width: 600px) {
             header {
                 margin-bottom: 80px;
-                padding: 0 16px;
             }
 
             h1 {
