@@ -13,10 +13,9 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
     <!-- Icona per "Aggiungi a schermata Home" su iOS -->
-    <!-- Metti un file icon-180.png (180x180) nella stessa cartella di index.html -->
     <link rel="apple-touch-icon" sizes="180x180" href="icon-180.png" />
 
-    <!-- Icona favicon standard (opzionale, stesso file o uno più piccolo) -->
+    <!-- Icona favicon standard -->
     <link rel="icon" type="image/png" sizes="32x32" href="icon-180.png" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -25,14 +24,13 @@
         html {
             margin: 0;
             padding: 0;
-            background-color: #0f172a; /* colore solido per le barre di sistema */
+            background-color: #0f172a;
         }
 
         body {
             margin: 0;
             padding: 0;
             font-family: "Segoe UI", Roboto, Arial, sans-serif;
-            /* min-height per gestire meglio le barre di Safari su iOS */
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -42,6 +40,7 @@
             color: white;
             background-color: #0f172a;
             box-sizing: border-box;
+            position: relative;
         }
 
         header {
@@ -98,7 +97,6 @@
             font-weight: bold;
         }
 
-        /* Layout mobile: pulsanti uno sotto l'altro */
         @media (max-width: 600px) {
             header {
                 margin-bottom: 80px;
@@ -118,12 +116,25 @@
                 padding: 20px;
             }
         }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px 0;
+            font-size: 0.65rem;
+            color: #64748b;
+            background-color: #0f172a;
+            text-align: center;
+        }
+
     </style>
 </head>
 <body>
     <header>
         <i class="fa-solid fa-check-to-slot icon-top"></i>
-        <h1>Menu Rapido Votazioni Regione Veneto 2025</h1>
+        <h1>Menu Rapido<br>Votazioni Regionali 2025</h1>
     </header>
 
     <div class="container">
@@ -151,6 +162,5 @@
     <footer>
         © 2025 Vittorio Maria Stano - Segretario Seggio 51
     </footer>
-    
 </body>
 </html>
